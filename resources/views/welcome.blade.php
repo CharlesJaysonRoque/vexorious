@@ -324,66 +324,9 @@
 </head>
 <body>
 
-<nav class="navbar">
-    <div class="nav-container">
-        <a href="/" class="brand-link">
-            <img src="{{ asset('images/logo/logo-transparent.png') }}" alt="Vexorious Logo" class="nav-logo">
-            <span class="brand-text">VEXORIOUS</span>
-        </a>
-        
-        <button class="mobile-toggle" aria-label="Toggle menu" id="mobileToggle">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
+@include('navbar')
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#members">Members</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#join" class="btn-join">Join Now</a></li>
-        </ul>
-    </div>
-</nav>
-
-<div class="content-wrapper">
-    <h1>Welcome to Vexorious</h1>
-    <p>Explore and Build Amazing Things!</p>
-
-    <div id="MainContainer">
-
-        <!-- Main highlighted image -->
-        <div id="ImageHighlight">
-            <img
-                id="mainImage"
-                src="{{ asset('images/sample1.jpg') }}"
-                alt="Main Image">
-        </div>
-
-        <!-- Thumbnail roll -->
-        <div id="OtherImageRoll">
-
-            <img class="thumb active"
-                src="{{ asset('images/sample1.jpg') }}"
-                alt="Thumbnail">
-
-            <img class="thumb"
-                src="{{ asset('images/sample2.jpg') }}"
-                alt="Thumbnail">
-
-            <img class="thumb"
-                src="{{ asset('images/sample3.jpg') }}"
-                alt="Thumbnail">
-
-            <img class="thumb"
-                src="{{ asset('images/sample4.jpg') }}"
-                alt="Thumbnail">
-
-        </div>
-
-    </div>
-</div>
+@yield('content')
 
 <script>
     const mainImage = document.getElementById("mainImage");
