@@ -22,13 +22,11 @@
         }
 
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
         body {
-            background: var(--secondary-color);
+            background: var(--accent-color);
             font-family: 'Mojangles', Arial, sans-serif;
             color: white;
             text-align: center;
@@ -73,6 +71,74 @@
             font-size: 1.25rem;
             color: #ccc;
             text-shadow: 2px 2px 0px #000;
+        }
+
+        .title-tab {
+            padding-top: 50px;
+        }
+
+        .top-members {
+            display: flex;
+            height: 300px;
+            padding-right: 50px;
+            overflow-x: scroll;
+            list-style-type: none;
+            width: 80%;
+        }
+
+        .top-members li {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-builds {
+            display: flex;
+            height: 300px;
+            padding-right: 50px;
+            overflow-x: scroll;
+            list-style-type: none;
+            width: 80%;
+        }
+
+        .top-builds li {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .divider {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            margin: 10px;
+            width: 100%;
+            background-color: var(--secondary-color);
+        }
+
+        .home-member-img {
+            width: 150px;
+            height: 200px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 3px solid transparent;
+            transition: 0.3s;
+        }
+
+        .home-members {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            height: 550px;
+            width: 100%;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            margin: 10px;
+        }
+
+        .divider h3 {
+            padding-top: 50px;
+            padding-bottom: 20px;
         }
 
         /* Navbar Styling */
@@ -151,7 +217,7 @@
         }
 
         /* 3D Minecraft Beveled Button for Join Now */
-        .nav-links li a.btn-join {
+        .btn-join {
             background-color: var(--main-color);
             color: #ffffff !important;
             padding: 10px 22px;
@@ -161,15 +227,16 @@
             transform: none !important;
             cursor: pointer;
             transition: all 0.1s ease;
+            text-decoration: none;
         }
 
-        .nav-links li a.btn-join:hover {
+        .btn-join:hover {
             background-color: #00b350;
             box-shadow: inset -3px -3px 0px #007a37, inset 3px 3px 0px #80ffaa;
             transform: scale(1.05) !important;
         }
 
-        .nav-links li a.btn-join:active {
+        .btn-join:active {
             transform: scale(0.95) !important;
             box-shadow: inset 3px 3px 0px #00632c, inset -3px -3px 0px #4dff88;
         }
@@ -243,6 +310,7 @@
         }
 
         #OtherImageRoll img.active {
+            transform: scale(1.05);
             border-color: var(--main-color);
         }
 
