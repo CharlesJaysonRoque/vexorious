@@ -1,6 +1,68 @@
 @extends('welcome')
 
 @section('content')
+    <style>
+        .top-members {
+            display: flex;
+            height: 300px;
+            padding-right: 50px;
+            overflow-x: scroll;
+            list-style-type: none;
+            width: 80%;
+        }
+
+        .top-members li {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .top-builds {
+            display: flex;
+            height: 300px;
+            padding-right: 50px;
+            overflow-x: scroll;
+            list-style-type: none;
+            width: 80%;
+        }
+
+        .top-builds li {
+            padding-left: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .divider {
+            padding-top: 25px;
+            padding-bottom: 25px;
+            margin: 10px;
+            width: 100%;
+            background-color: var(--secondary-color);
+        }
+
+        .home-member-img {
+            width: 150px;
+            height: 200px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: 3px solid transparent;
+            transition: 0.3s;
+        }
+
+        .home-members {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: column;
+            height: 550px;
+            width: 100%;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            margin: 10px;
+        }
+    </style>
+
+
     <h1 class="title-tab">Welcome to Vexorius</h1>
     <p>Discover the power of Vexorius and unleash your creativity.</p>
     <div class="divider">
@@ -8,7 +70,7 @@
         <p>Vexorius is a vibrant community of creators and innovators dedicated to pushing the boundaries of what's possible.</p>
     </div>
     <div class="divider home-members">
-        <h2>Sample Builds</h2>
+        <h2>Gallery</h2>
         <p>Check out some of the amazing creations from our community!</p>
         <ul class="top-builds">
             <li>
