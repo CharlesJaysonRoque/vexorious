@@ -4,31 +4,32 @@
     <style>
         .GalleryGrid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2 per row */
+            grid-template-columns: repeat(2, 700px);
+            justify-content: center;  /* Centers the two columns */
             gap: 30px;
-            max-width: 1800px;
-            margin: auto;
         }
         .MainContainer {
-            text-align: center;
-            max-width: 900px;
             width: 100%;
-            margin: 0 auto;
+            max-width: 700px;         /* Adjust as desired */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Main Image */
         .ImageHighlight {
             width: 80%;
-            aspect-ratio: 16 / 9; /* or 4 / 3, 1 / 1, etc. */
-            margin-bottom: 20px;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 10px;
+            border: 3px solid var(--main-color);
         }
 
         .ImageHighlight img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 10px;
-            border: 3px solid var(--main-color);
+            display: block;
         }
 
         /* Thumbnail Roll */
@@ -41,8 +42,8 @@
         }
 
         .OtherImageRoll img {
-            width: 150px;
-            height: 100px;
+            width: calc(150px * 0.8);
+            height: calc(100px * 0.8);
             object-fit: cover;
             cursor: pointer;
             border-radius: 8px;
