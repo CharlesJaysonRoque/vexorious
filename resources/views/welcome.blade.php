@@ -19,7 +19,7 @@
             --secondary-color: #000000;
             --accent-color: #ffffff;
             --dark-grey: #141414;
-            --test-color: #1a1a1a;
+            --background-color: #1a1a1a;
         }
 
         * {
@@ -27,7 +27,7 @@
         }
 
         body {
-            background: var(--test-color);
+            background: var(--background-color);
             font-family: 'Mojangles', Arial, sans-serif;
             color: white;
             text-align: center;
@@ -82,7 +82,7 @@
             padding-top: 50px;
             padding-bottom: 20px;
         }
-        
+
         /* Responsive Styles */
         @media (max-width: 768px) {
             .mobile-toggle {
