@@ -111,6 +111,9 @@
             </li>
         </ul>
     </div>
+
+
+
     <div class="divider home-members">
         <h2 class="title-tab">Top Members</h2>
         <p>Check out some of the amazing players from our community!</p>
@@ -160,4 +163,29 @@
         <a class="btn-join" href="https://discord.gg/cz5tdM83w" target="_blank">Discord</a>
     </section>
     </div>
+
+    <script>
+        function autoScroll(container) {
+            let direction = 1; // 1 = right, -1 = left
+            let speed = 1;     // pixels per frame
+
+            function animate() {
+                container.scrollLeft += speed * direction;
+
+                if (container.scrollLeft + container.clientWidth >= container.scrollWidth) {
+                    direction = -1; // Go left
+                }
+
+                if (container.scrollLeft <= 0) {
+                    direction = 1; // Go right
+                }
+
+                requestAnimationFrame(animate);
+            }
+
+            animate();
+        }
+
+        document.querySelectorAll(".top-builds, .top-members").forEach(autoScroll);
+    </script>
 @endsection

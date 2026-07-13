@@ -14,6 +14,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            margin-bottom: 50px;
         }
 
         /* Main Image */
@@ -70,6 +72,7 @@
     <div class="GalleryGrid">
 
         <div class="MainContainer">
+            <h3>Build 1</h3>
             <div class="ImageHighlight">
                 <img class="mainImage"
                     src="{{ asset('images/sample1.jpg') }}">
@@ -91,6 +94,7 @@
         </div>
 
         <div class="MainContainer">
+            <h3>Build 2</h3>
             <div class="ImageHighlight">
                 <img class="mainImage"
                     src="{{ asset('images/sample1.jpg') }}">
@@ -112,6 +116,7 @@
         </div>
 
         <div class="MainContainer">
+            <h3>Build 3</h3>
             <div class="ImageHighlight">
                 <img class="mainImage"
                     src="{{ asset('images/sample1.jpg') }}">
@@ -133,6 +138,7 @@
         </div>
 
         <div class="MainContainer">
+            <h3>Build 4</h3>
             <div class="ImageHighlight">
                 <img class="mainImage"
                     src="{{ asset('images/sample1.jpg') }}">
@@ -154,6 +160,7 @@
         </div>
 
         <div class="MainContainer">
+            <h3>Build 5</h3>
             <div class="ImageHighlight">
                 <img class="mainImage"
                     src="{{ asset('images/sample1.jpg') }}">
@@ -175,6 +182,7 @@
         </div>
 
         <div class="MainContainer">
+            <h3>Build 6</h3>
             <div class="ImageHighlight">
                 <img class="mainImage"
                     src="{{ asset('images/sample1.jpg') }}">
@@ -203,19 +211,29 @@
             const mainImage = container.querySelector(".mainImage");
             const thumbnails = container.querySelectorAll(".thumb");
 
-            thumbnails.forEach(thumb => {
+            let current = 0;
 
+            function updateImage() {
+                mainImage.src = thumbnails[current].src;
+
+                thumbnails.forEach(t => t.classList.remove("active"));
+                thumbnails[current].classList.add("active");
+
+            }
+
+            // Click a thumbnail
+            thumbnails.forEach((thumb, index) => {
                 thumb.addEventListener("click", () => {
-
-                    mainImage.src = thumb.src;
-
-                    thumbnails.forEach(t => t.classList.remove("active"));
-
-                    thumb.classList.add("active");
-
+                    current = index;
+                    updateImage();
                 });
-
             });
+
+            // Auto-next every 3 seconds
+            setInterval(() => {
+                current = (current + 1) % thumbnails.length;
+                updateImage();
+            }, 3000);
 
         });
     </script>
