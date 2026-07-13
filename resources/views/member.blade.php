@@ -2,6 +2,21 @@
 
 @section('content')
     <style>
+        .member-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 members per row */
+            gap: 30px;
+            max-width: 1400px;
+            margin: 50px auto;
+        }
+
+        .member {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
         .member-image {
             width: 150px;
             height: 150px;
@@ -49,43 +64,47 @@
     <p>As a member, you'll have the opportunity to connect with other creators, share your work, and receive feedback from the community.</p>
     <p>Join us today and take your creativity to the next level!</p>
 
-    <div class="member">
-        <img src="{{ asset('images/sample4.jpg') }}" alt="Member Image" class="member-image">
-        <div class="member-info">
-            <p>Dark</p>
-            <a href="">View Profile</a>
-        </div>
-    </div>
+    <div class="member-container">
 
-    <div class="member">
-        <img src="{{ asset('images/sample4.jpg') }}" alt="Member Image" class="member-image">
-        <div class="member-info">
-            <p>Potato</p>
-            <a href="">View Profile</a>
+        <div class="member">
+            <img src="{{ asset('images/sample4.jpg') }}" alt="Member Image" class="member-image">
+            <div class="member-info">
+                <p>Dark</p>
+                <a href="">View Profile</a>
+            </div>
         </div>
-    </div>
 
-    <div class="member">
-        <img src="{{ asset('images/sample4.jpg') }}" alt="Member Image" class="member-image">
-        <div class="member-info">
-            <p>Remmx</p>
-            <a href="">View Profile</a>
+        <div class="member">
+            <img src="{{ asset('images/sample4.jpg') }}" alt="Member Image" class="member-image">
+            <div class="member-info">
+                <p>Potato</p>
+                <a href="">View Profile</a>
+            </div>
         </div>
-    </div>
 
-    <div class="member">
-        <img src="{{ asset('images/sample4.jpg') }}" alt="Member Image" class="member-image">
-        <div class="member-info">
-            <p>Zaenna</p>
-            <a href="">View Profile</a>
+        <div class="member">
+            <img src="{{ asset('images/sample4.jpg') }}" alt="Member Image" class="member-image">
+            <div class="member-info">
+                <p>Remmx</p>
+                <a href="">View Profile</a>
+            </div>
         </div>
-    </div>
 
-    <div class="member">
-        <img src="{{ asset('images/sample4.jpg') }}" alt="Member Image" class="member-image">
-        <div class="member-info">
-            <p>Scyla</p>
-            <a href="">View Profile</a>
+        <div class="member">
+            <img src="{{ asset('images/sample4.jpg') }}" alt="Member Image" class="member-image">
+            <div class="member-info">
+                <p>Zaenna</p>
+                <a href="">View Profile</a>
+            </div>
         </div>
+
+        <div class="member">
+            <img src="{{ asset('images/sample4.jpg') }}" alt="Member Image" class="member-image">
+            <div class="member-info">
+                <p>Scyla</p>
+                <a href="">View Profile</a>
+            </div>
+        </div>
+
     </div>
 @endsection

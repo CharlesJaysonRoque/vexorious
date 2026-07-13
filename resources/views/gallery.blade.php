@@ -2,16 +2,24 @@
 
 @section('content')
     <style>
+        .GalleryGrid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 per row */
+            gap: 30px;
+            max-width: 1800px;
+            margin: auto;
+        }
         .MainContainer {
+            text-align: center;
             max-width: 900px;
             width: 100%;
-            margin: auto;
+            margin: 0 auto;
         }
 
         /* Main Image */
         .ImageHighlight {
-            width: 100%;
-            height: 500px;
+            width: 80%;
+            aspect-ratio: 16 / 9; /* or 4 / 3, 1 / 1, etc. */
             margin-bottom: 20px;
         }
 
@@ -58,46 +66,134 @@
     <p>Browse through the gallery to discover inspiring projects, innovative designs, and creative works that showcase the power of Vexorius.</p>
     <p>Whether you're looking for inspiration or want to share your own creations, the gallery is the perfect place to connect with fellow creators and celebrate creativity.</p>
 
-    <div class="MainContainer">
-        <div class="ImageHighlight">
-            <img class="mainImage"
-                src="{{ asset('images/sample1.jpg') }}">
+    <div class="GalleryGrid">
+
+        <div class="MainContainer">
+            <div class="ImageHighlight">
+                <img class="mainImage"
+                    src="{{ asset('images/sample1.jpg') }}">
+            </div>
+
+            <div class="OtherImageRoll">
+                <img class="thumb active"
+                    src="{{ asset('images/sample1.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample2.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample3.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample4.jpg') }}">
+            </div>
         </div>
 
-        <div class="OtherImageRoll">
-            <img class="thumb active"
-                src="{{ asset('images/sample1.jpg') }}">
+        <div class="MainContainer">
+            <div class="ImageHighlight">
+                <img class="mainImage"
+                    src="{{ asset('images/sample1.jpg') }}">
+            </div>
 
-            <img class="thumb"
-                src="{{ asset('images/sample2.jpg') }}">
+            <div class="OtherImageRoll">
+                <img class="thumb active"
+                    src="{{ asset('images/sample1.jpg') }}">
 
-            <img class="thumb"
-                src="{{ asset('images/sample3.jpg') }}">
+                <img class="thumb"
+                    src="{{ asset('images/sample2.jpg') }}">
 
-            <img class="thumb"
-                src="{{ asset('images/sample4.jpg') }}">
+                <img class="thumb"
+                    src="{{ asset('images/sample3.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample4.jpg') }}">
+            </div>
         </div>
-    </div>
 
-    <div class="MainContainer">
-        <div class="ImageHighlight">
-            <img class="mainImage"
-                src="{{ asset('images/sample1.jpg') }}">
+        <div class="MainContainer">
+            <div class="ImageHighlight">
+                <img class="mainImage"
+                    src="{{ asset('images/sample1.jpg') }}">
+            </div>
+
+            <div class="OtherImageRoll">
+                <img class="thumb active"
+                    src="{{ asset('images/sample1.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample2.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample3.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample4.jpg') }}">
+            </div>
         </div>
 
-        <div class="OtherImageRoll">
-            <img class="thumb active"
-                src="{{ asset('images/sample1.jpg') }}">
+        <div class="MainContainer">
+            <div class="ImageHighlight">
+                <img class="mainImage"
+                    src="{{ asset('images/sample1.jpg') }}">
+            </div>
 
-            <img class="thumb"
-                src="{{ asset('images/sample2.jpg') }}">
+            <div class="OtherImageRoll">
+                <img class="thumb active"
+                    src="{{ asset('images/sample1.jpg') }}">
 
-            <img class="thumb"
-                src="{{ asset('images/sample3.jpg') }}">
+                <img class="thumb"
+                    src="{{ asset('images/sample2.jpg') }}">
 
-            <img class="thumb"
-                src="{{ asset('images/sample4.jpg') }}">
+                <img class="thumb"
+                    src="{{ asset('images/sample3.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample4.jpg') }}">
+            </div>
         </div>
+
+        <div class="MainContainer">
+            <div class="ImageHighlight">
+                <img class="mainImage"
+                    src="{{ asset('images/sample1.jpg') }}">
+            </div>
+
+            <div class="OtherImageRoll">
+                <img class="thumb active"
+                    src="{{ asset('images/sample1.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample2.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample3.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample4.jpg') }}">
+            </div>
+        </div>
+
+        <div class="MainContainer">
+            <div class="ImageHighlight">
+                <img class="mainImage"
+                    src="{{ asset('images/sample1.jpg') }}">
+            </div>
+
+            <div class="OtherImageRoll">
+                <img class="thumb active"
+                    src="{{ asset('images/sample1.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample2.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample3.jpg') }}">
+
+                <img class="thumb"
+                    src="{{ asset('images/sample4.jpg') }}">
+            </div>
+        </div>
+
     </div>
 
     <script>
