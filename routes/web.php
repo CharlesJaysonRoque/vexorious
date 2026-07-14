@@ -21,3 +21,12 @@ Route::get('/member', function () {
 Route::get('/gallery', function () {
     return view('gallery');
 })->name('gallery');
+
+Route::get('/rules', function () {
+    return view('rules');
+})->name('rules');
+
+Route::get('/world-map', function () {
+    return view('map');
+})->name('map');
+

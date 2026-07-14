@@ -139,7 +139,24 @@
             <li><a href="{{ route('about') }}">About</a></li>
             <li><a href="{{ route('member') }}">Members</a></li>
             <li><a href="{{ route('gallery') }}">Gallery</a></li>
+            <li><a href="{{ route('rules') }}">Rules</a></li>
+            <li><a href="{{ route('map') }}">World Map</a></li>
             <li><a href="{{ route('home') }}#join" class="btn-join">Join Now</a></li>
         </ul>
     </div>
 </nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (mobileToggle && navLinks) {
+            mobileToggle.addEventListener('click', () => {
+                mobileToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+        }
+    });
+</script>
+
