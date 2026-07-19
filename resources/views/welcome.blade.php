@@ -83,64 +83,7 @@
             padding-bottom: 20px;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .mobile-toggle {
-                display: flex;
-            }
 
-            .brand-text {
-                font-size: 1.3rem;
-            }
-
-            .nav-logo {
-                height: 44px;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                width: 75%;
-                height: 100vh;
-                background-color: rgba(20, 20, 20, 0.96);
-                backdrop-filter: blur(12px);
-                border-left: 4px solid var(--main-color);
-                flex-direction: column;
-                justify-content: center;
-                gap: 35px;
-                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-                box-shadow: -10px 0 40px rgba(0,0,0,0.6);
-            }
-
-            .nav-links.active {
-                right: 0;
-            }
-
-            .nav-links li a {
-                font-size: 1.25rem;
-                padding: 10px 20px;
-                width: 100%;
-            }
-
-            .nav-links li a.btn-join {
-                width: auto;
-                margin-top: 10px;
-            }
-
-            /* Hamburger animation */
-            .mobile-toggle.active .bar:nth-child(1) {
-                transform: translateY(9px) rotate(45deg);
-            }
-
-            .mobile-toggle.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            .mobile-toggle.active .bar:nth-child(3) {
-                transform: translateY(-9px) rotate(-45deg);
-            }
-        }
 
         @media (max-width: 600px) {
             .ImageHighlight {

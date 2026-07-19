@@ -548,6 +548,51 @@
             border: 2px solid #222;
             border-radius: 4px;
         }
+
+        /* Responsive optimizations */
+        .modal {
+            overflow-y: auto;
+            align-items: flex-start;
+            padding: 40px 20px;
+            box-sizing: border-box;
+        }
+
+        .modal-content {
+            margin: auto;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 480px) {
+            .member {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 15px;
+            }
+            .member-info {
+                padding-left: 0;
+                margin-top: 15px;
+                align-items: center;
+                width: 100%;
+                text-align: center;
+            }
+            .member-name-row {
+                justify-content: center;
+            }
+            .btn-profile-view {
+                align-self: center;
+            }
+            #modalImage {
+                height: 180px;
+            }
+            #modalName {
+                font-size: 1.4rem;
+            }
+            #modalDescription {
+                font-size: 0.95rem;
+                padding: 10px;
+            }
+        }
     </style>
 
     <h1 class="title-tab">Server Members</h1>

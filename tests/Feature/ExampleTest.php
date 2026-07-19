@@ -2,6 +2,8 @@
 
 test('the application returns a successful response', function () {
     $response = $this->get('/');
+    $response->assertRedirect('/home');
 
-    $response->assertStatus(200);
+    $responseHome = $this->get('/home');
+    $responseHome->assertStatus(200);
 });

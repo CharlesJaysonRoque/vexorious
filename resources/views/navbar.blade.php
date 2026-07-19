@@ -19,6 +19,7 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 24px;
+        position: relative;
     }
 
     .brand-link {
@@ -118,6 +119,77 @@
         background-color: white;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 2px 2px 0px #000;
+    }
+
+    /* Mobile Responsive Styles */
+    @media (max-width: 992px) {
+        .mobile-toggle {
+            display: flex;
+            z-index: 10100; /* Ensure button floats on top of sliding sidebar */
+        }
+
+        .brand-text {
+            font-size: 1.3rem;
+        }
+
+        .nav-logo {
+            height: 44px;
+        }
+
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -280px; /* Hide offscreen right */
+            width: 280px;
+            height: 100vh;
+            background-color: #141414;
+            border-left: 4px solid var(--main-color); /* Minecraft green line down the left border */
+            box-shadow: -10px 0 40px rgba(0,0,0,0.6);
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin: 0;
+            padding: 80px 20px 20px 20px; /* Top padding leaves space for hamburger icon alignment */
+            list-style: none;
+            transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10000;
+        }
+
+        .nav-links.active {
+            right: 0; /* Slide into view */
+        }
+
+        .nav-links li {
+            width: 100%;
+            text-align: center;
+        }
+
+        .nav-links li a {
+            font-size: 1.25rem;
+            padding: 10px 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .nav-links li a.btn-join {
+            width: auto;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        /* Hamburger animation */
+        .mobile-toggle.active .bar:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+
+        .mobile-toggle.active .bar:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-toggle.active .bar:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
     }
 </style>
 

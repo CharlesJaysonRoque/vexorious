@@ -5,10 +5,12 @@
         .top-members {
             display: flex;
             height: 300px;
-            padding-right: 50px;
+            padding-right: 20px;
             overflow-x: scroll;
             list-style-type: none;
-            width: 80%;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .top-members li {
@@ -20,10 +22,12 @@
         .top-builds {
             display: flex;
             height: 300px;
-            padding-right: 50px;
+            padding-right: 20px;
             overflow-x: scroll;
             list-style-type: none;
-            width: 80%;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .top-builds li {
