@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Gallery</title>
+    <title>Vexorious | Bedrock Survival Server</title>
+    <meta name="description" content="Vexorious is a Minecraft Bedrock SMP survival server community featuring land claims, commercial district player shops, and cross-platform play.">
 
     <style>
         @font-face {
