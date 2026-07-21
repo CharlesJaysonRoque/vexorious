@@ -9,7 +9,6 @@
             text-align: left;
         }
 
-        /* Category Filter Tabs Bar */
         .category-tabs-container {
             margin-bottom: 30px;
             display: flex;
@@ -63,14 +62,12 @@
         .tab-shops.active { background-color: #b8860b; }
         .tab-events.active { background-color: #4b0082; }
 
-        /* Gallery Grid Layout */
         .GalleryGrid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
-        /* Clean Card Styles (Lightbox Trigger) */
         .MainContainer {
             background-color: #141414;
             border: 3px solid #000;
@@ -91,7 +88,6 @@
             box-shadow: inset -3px -3px 0px #0a0a0a, inset 3px 3px 0px #2a2a2a, 0 8px 25px rgba(0, 152, 68, 0.25);
         }
 
-        /* Card Image Preview */
         .card-image-box {
             width: 100%;
             aspect-ratio: 16 / 10;
@@ -114,7 +110,6 @@
             transform: scale(1.03);
         }
 
-        /* Hover Overlay on Image Box */
         .card-image-overlay {
             position: absolute;
             inset: 0;
@@ -178,7 +173,6 @@
             white-space: nowrap;
         }
 
-        /* Builder Row with Player Head */
         .builder-row {
             display: flex;
             align-items: center;
@@ -203,7 +197,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* --- LIGHTBOX MODAL OVERLAY --- */
         .lightbox-modal {
             position: fixed;
             inset: 0;
@@ -303,7 +296,7 @@
             transition: opacity 0.2s ease;
         }
 
-        /* Navigation Arrows on Left and Right */
+      
         .lightbox-arrow {
             position: absolute;
             top: 50%;
@@ -334,7 +327,7 @@
         .arrow-left { left: 15px; border-radius: 6px 0 0 6px; }
         .arrow-right { right: 15px; border-radius: 0 6px 6px 0; }
 
-        /* Thumbnails list inside modal */
+       
         .lightbox-thumbs {
             display: flex;
             gap: 12px;
@@ -366,7 +359,7 @@
             box-shadow: inset -1px -1px 0px #005224, inset 1px 1px 0px #4dff88;
         }
 
-        /* Description Details inside modal */
+  
         .lightbox-details {
             background-color: #0b0b0b;
             border: 2px solid #222;
@@ -485,7 +478,6 @@
             box-shadow: inset 2px 2px 0px #111, inset -2px -2px 0px #444;
         }
 
-        /* Toast notification */
         .map-toast {
             position: fixed;
             bottom: 30px;
@@ -517,7 +509,7 @@
             font-weight: bold;
         }
 
-        /* Filtering Transitions */
+      
         .card-fade-in {
             animation: cardFadeIn 0.35s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
         }
@@ -570,7 +562,6 @@
         <h1 class="title-tab">Creations Gallery</h1>
         <p>Browse survival designs, bases, farms, and redstone systems built by the players of Vexorious.</p>
 
-        <!-- Album Category Tabs Bar -->
         <div class="category-tabs-container">
             <span class="tabs-label">Filter Albums</span>
             <div class="gallery-tabs">
@@ -582,19 +573,17 @@
             </div>
         </div>
 
-        <!-- Creations Gallery Grid (Option 3 Clean View) -->
         <div class="GalleryGrid" id="galleryGrid">
-            <!-- Dynamically populated via JS to sync index easily -->
         </div>
     </div>
 
-    <!-- --- LIGHTBOX MODAL OVERLAY --- -->
+
     <div class="lightbox-modal" id="lightboxModal">
         <div class="lightbox-content">
             <button class="lightbox-close-btn" id="btnCloseLightbox" title="Close Overlay">✕</button>
             
             <div class="lightbox-image-viewer">
-                <!-- Navigation arrows -->
+
                 <button class="lightbox-arrow arrow-left" id="btnPrevAngle" title="Previous Image">
                     <svg style="width:28px;height:28px;fill:currentColor;" viewBox="0 0 24 24">
                         <path d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
@@ -610,10 +599,9 @@
                 </button>
             </div>
 
-            <!-- Clickable thumb list -->
+
             <div class="lightbox-thumbs" id="lightboxThumbs"></div>
 
-            <!-- Build details -->
             <div class="lightbox-details">
                 <div class="details-title-row">
                     <span class="details-title" id="detailsTitle">Build Name</span>

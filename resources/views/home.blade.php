@@ -2,9 +2,7 @@
 
 @section('content')
     <style>
-        /* --- REFINED HOMEPAGE STYLES --- */
 
-        /* 1. HERO SECTION WITH SPLIT LAYOUT */
         .hero-banner {
             position: relative;
             width: 100%;
@@ -38,7 +36,6 @@
             align-items: center;
         }
 
-        /* Left Column: Centered Logo & Title */
         .hero-left {
             display: flex;
             flex-direction: column;
@@ -48,12 +45,26 @@
         }
 
         .hero-logo-box {
-            display: flex;
+            position: relative;
+            display: inline-flex;
             justify-content: center;
             align-items: center;
         }
 
+        .logo-lightning-canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 210px;
+            height: 210px;
+            pointer-events: none;
+            z-index: 1;
+        }
+
         .hero-logo {
+            position: relative;
+            z-index: 2;
             width: 150px;
             height: auto;
             filter: drop-shadow(0 0 18px rgba(0, 152, 68, 0.6));
@@ -63,39 +74,12 @@
         }
 
         .hero-logo:hover {
-            filter: drop-shadow(0 0 30px #00ff66) drop-shadow(0 0 50px rgba(0, 255, 102, 0.8));
+            filter: drop-shadow(0 0 25px #00ff66) drop-shadow(0 0 45px rgba(0, 255, 102, 0.8));
             transform: scale(1.08) translateY(-4px);
         }
 
         .hero-logo:active {
             transform: scale(0.95);
-        }
-
-        /* Lightning Strike Glow Effect on Click */
-        .hero-logo.lightning-active {
-            filter: drop-shadow(0 0 35px #00ff66) drop-shadow(0 0 70px #ffffff) drop-shadow(0 0 110px #00ff66) !important;
-            transform: scale(1.22) translateY(-6px) !important;
-        }
-
-        .hero-banner.lightning-flash {
-            animation: heroLightningBg 0.4s ease-out;
-        }
-
-        @keyframes heroLightningBg {
-            0% { background-color: rgba(0, 255, 102, 0.3); }
-            20% { background-color: rgba(255, 255, 255, 0.4); }
-            40% { background-color: rgba(0, 255, 102, 0.2); }
-            60% { background-color: rgba(255, 255, 255, 0.25); }
-            100% { background-color: transparent; }
-        }
-
-        .lightning-canvas {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 3;
         }
 
         @keyframes heroLogoFloat {
@@ -140,7 +124,6 @@
             text-shadow: 1px 1px 0px #000;
         }
 
-        /* Right Side: Server Info & Join Card */
         .hero-right-card {
             background-color: #141414;
             border: 4px solid #000;
@@ -273,7 +256,7 @@
             border-bottom: 4px solid #000;
         }
 
-        /* PING-PONG AUTO-SCROLL ROW STYLES (WITH MOUSE DRAG SWIPE) */
+        
         .auto-scroll-row {
             display: flex;
             gap: 25px;
@@ -293,7 +276,6 @@
             display: none;
         }
 
-        /* UNIFORM FEATURED BUILD CARDS */
         .build-card-item {
             min-width: 300px;
             max-width: 300px;
@@ -386,7 +368,6 @@
             image-rendering: pixelated;
         }
 
-        /* Theme: Wall of Fame Staff Showcase */
         .theme-wall-of-fame {
             background: linear-gradient(180deg, rgba(15,15,15,0.88) 0%, rgba(20,20,20,0.95) 100%), url('{{ asset('images/sample2.jpg') }}') center/cover no-repeat;
             border-bottom: 4px solid #000;
@@ -431,7 +412,6 @@
         .role-co-owner { background-color: #d32f2f; color: #fff; }
         .role-builder { background-color: #00bfff; color: #fff; }
 
-        /* Bedrock Join Guide Box */
         .join-guide-box {
             background-color: #141414;
             border: 3px solid #000;
@@ -458,7 +438,6 @@
             gap: 8px;
         }
 
-        /* MINECRAFT GRASS BANNER FOOTER CTA */
         .grass-banner-footer {
             background-color: #111;
             border-top: 10px solid #009844;
@@ -477,7 +456,6 @@
             background: repeating-linear-gradient(90deg, #009844 0px, #009844 16px, #007333 16px, #007333 32px);
         }
 
-        /* Toast Tooltip */
         .toast-copy {
             position: fixed;
             bottom: 30px;
@@ -510,14 +488,13 @@
         }
     </style>
 
-    <!-- 1. HERO SECTION WITH CENTERED LOGO & SPLIT LAYOUT -->
     <section class="hero-banner">
         <div class="hero-overlay"></div>
-        <canvas id="lightningCanvas" class="lightning-canvas"></canvas>
         <div class="hero-content-split">
             <!-- Left Side: Centered Logo, Title & Custom Badges -->
             <div class="hero-left">
                 <div class="hero-logo-box">
+                    <canvas id="logoLightningCanvas" class="logo-lightning-canvas"></canvas>
                     <img src="{{ asset('images/logo/logo-transparent.png') }}" alt="Vexorious Logo" class="hero-logo" title="Vexorious SMP">
                 </div>
                 <h1 class="hero-title">VEXORIUS SMP</h1>
@@ -553,7 +530,7 @@
         </div>
     </section>
 
-    <!-- 2. REMADE FEATURED CREATIONS SHOWCASE (UNIFORM CARDS & PING-PONG SLIDE) -->
+   
     <section class="section-wrapper theme-builds">
         <div class="section-inner">
             <div class="section-header">
@@ -638,7 +615,6 @@
         </div>
     </section>
 
-    <!-- 3. WALL OF FAME STAFF SHOWCASE -->
     <section class="section-wrapper theme-wall-of-fame">
         <div class="section-inner">
             <div class="section-header">
@@ -703,7 +679,6 @@
         </div>
     </section>
 
-    <!-- 4. BEDROCK CONNECTION GUIDE -->
     <section class="section-wrapper theme-features" id="join" style="background:#141414;">
         <div class="section-inner">
             <div class="join-guide-box">
@@ -737,7 +712,6 @@
         </div>
     </section>
 
-    <!-- 5. MINECRAFT GRASS BANNER FOOTER CTA -->
     <div class="grass-banner-footer">
         <h2 style="font-size:2.2rem; color:#fff; text-shadow:3px 3px 0px #000; text-transform:uppercase; margin-bottom:12px;">Become Part of the Legend</h2>
         <p style="font-size:1.15rem; color:#ccc; text-shadow:2px 2px 0px #000; max-width:600px; margin:0 auto 30px;">Join our official Discord community to share build screenshots, apply for builder ranks, and vote on events.</p>
@@ -751,7 +725,6 @@
         ✔ Server Connection Details Copied to Clipboard!
     </div>
 
-    <!-- SCRIPT FOR PING, COPY & SMOOTH PING-PONG AUTO-SCROLLING -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const btnHeroCopyIp = document.getElementById('btnHeroCopyIp');
@@ -797,7 +770,7 @@
                     console.warn('Ping error:', err);
                 });
 
-            // Smooth Ping-Pong Auto-Scroll with Mouse Drag-to-Swipe
+        
             function enablePingPongScroll(containerId) {
                 const container = document.getElementById(containerId);
                 if (!container) return;
@@ -893,70 +866,64 @@
                     });
             });
 
-            // Logo Click Lightning Strike & Intense Emerald Glow Effect
+            // Logo Hover Micro-Lightning Arcs & Glow Effect
             const heroLogo = document.querySelector('.hero-logo');
-            const heroBanner = document.querySelector('.hero-banner');
-            const canvas = document.getElementById('lightningCanvas');
+            const logoCanvas = document.getElementById('logoLightningCanvas');
 
-            if (heroLogo && heroBanner && canvas) {
-                heroLogo.addEventListener('click', () => {
-                    const ctx = canvas.getContext('2d');
-                    canvas.width = heroBanner.clientWidth;
-                    canvas.height = heroBanner.clientHeight;
+            if (heroLogo && logoCanvas) {
+                const ctx = logoCanvas.getContext('2d');
+                let animationId = null;
 
-                    const logoRect = heroLogo.getBoundingClientRect();
-                    const bannerRect = heroBanner.getBoundingClientRect();
-                    const startX = (logoRect.left + logoRect.width / 2) - bannerRect.left;
-                    const startY = (logoRect.top + logoRect.height / 2) - bannerRect.top;
+                logoCanvas.width = 210;
+                logoCanvas.height = 210;
 
-                    // Trigger CSS Glow and Flash
-                    heroLogo.classList.add('lightning-active');
-                    heroBanner.classList.add('lightning-flash');
+                function drawMicroLightning() {
+                    ctx.clearRect(0, 0, logoCanvas.width, logoCanvas.height);
+                    
+                    const centerX = logoCanvas.width / 2;
+                    const centerY = logoCanvas.height / 2;
+                    const radius = 75; // Perimeter radius matching 150px logo
 
-                    // Draw jagged lightning strikes emanating from logo
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    // Draw subtle crackling electric arcs around logo border
+                    for (let a = 0; a < 3; a++) {
+                        const startAngle = Math.random() * Math.PI * 2;
+                        const arcLength = 0.5 + Math.random() * 0.7;
+                        const endAngle = startAngle + arcLength;
 
-                    function drawBolt(x1, y1, x2, y2, color, width) {
                         ctx.beginPath();
-                        ctx.moveTo(x1, y1);
+                        const segments = 6;
+                        for (let i = 0; i <= segments; i++) {
+                            const angle = startAngle + (endAngle - startAngle) * (i / segments);
+                            const r = radius + (Math.random() - 0.5) * 16;
+                            const x = centerX + Math.cos(angle) * r;
+                            const y = centerY + Math.sin(angle) * r;
 
-                        const steps = 14;
-                        for (let i = 0; i <= steps; i++) {
-                            const t = i / steps;
-                            const targetX = x1 + (x2 - x1) * t;
-                            const targetY = y1 + (y2 - y1) * t;
-                            const offset = (i === 0 || i === steps) ? 0 : (Math.random() - 0.5) * 50;
-                            
-                            ctx.lineTo(targetX + offset, targetY);
+                            if (i === 0) ctx.moveTo(x, y);
+                            else ctx.lineTo(x, y);
                         }
 
-                        ctx.strokeStyle = color;
-                        ctx.lineWidth = width;
+                        ctx.strokeStyle = (Math.random() > 0.35) ? '#00ff66' : '#ffffff';
+                        ctx.lineWidth = 1.5 + Math.random() * 1.5;
                         ctx.shadowColor = '#00ff66';
-                        ctx.shadowBlur = 20;
+                        ctx.shadowBlur = 10;
                         ctx.stroke();
                     }
 
-                    // Multi-branch lightning strikes
-                    const strikePoints = [
-                        { x: startX - 300, y: canvas.height },
-                        { x: startX + 350, y: canvas.height },
-                        { x: startX - 400, y: startY + 120 },
-                        { x: startX + 450, y: startY + 120 },
-                        { x: canvas.width - 50, y: startY + 80 }
-                    ];
+                    animationId = requestAnimationFrame(drawMicroLightning);
+                }
 
-                    strikePoints.forEach(pt => {
-                        drawBolt(startX, startY, pt.x, pt.y, '#ffffff', 4);
-                        drawBolt(startX, startY, pt.x, pt.y, '#00ff66', 2);
-                    });
+                heroLogo.addEventListener('mouseenter', () => {
+                    if (!animationId) {
+                        drawMicroLightning();
+                    }
+                });
 
-                    // Clear effects after flash sequence ends
-                    setTimeout(() => {
-                        heroLogo.classList.remove('lightning-active');
-                        heroBanner.classList.remove('lightning-flash');
-                        ctx.clearRect(0, 0, canvas.width, canvas.height);
-                    }, 450);
+                heroLogo.addEventListener('mouseleave', () => {
+                    if (animationId) {
+                        cancelAnimationFrame(animationId);
+                        animationId = null;
+                        ctx.clearRect(0, 0, logoCanvas.width, logoCanvas.height);
+                    }
                 });
             }
         });

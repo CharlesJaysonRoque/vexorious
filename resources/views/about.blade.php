@@ -38,7 +38,6 @@
             text-shadow: 1px 1px 0px #000;
         }
 
-        /* World History Timeline Styles */
         .chronicles-box {
             background: linear-gradient(180deg, #111 0%, #171717 100%);
             border: 3px solid #000;
@@ -102,7 +101,6 @@
             margin: 0;
         }
 
-        /* Pillars Grid */
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -128,7 +126,6 @@
         <h1 class="title-tab">About Vexorious</h1>
         <p>Discover the history, story, and community vision behind our Minecraft Bedrock SMP world.</p>
 
-        <!-- Intro Mission Box -->
         <div class="about-hero-box">
             <img src="{{ asset('images/logo/logo-transparent.png') }}" alt="Vexorious Logo" class="about-logo">
             <p class="about-text">
@@ -136,7 +133,6 @@
             </p>
         </div>
 
-        <!-- World Chronicles Timeline -->
         <div class="chronicles-box">
             <h2 style="font-size:2.2rem; color:var(--main-color); text-shadow:3px 3px 0px #000; text-transform:uppercase; margin:0;">World Chronicles</h2>
             <p style="color:#aaa; font-size:1.05rem; margin:6px 0 0 0;">The history and eras of Vexorious Bedrock SMP.</p>
@@ -165,7 +161,6 @@
             </div>
         </div>
 
-        <!-- Community Pillars -->
         <div style="margin-bottom: 50px;">
             <h2 style="font-size:2rem; color:var(--main-color); text-shadow:2px 2px 0px #000; text-transform:uppercase; margin-bottom:10px;">Our Core Pillars</h2>
             <div class="pillars-grid">
