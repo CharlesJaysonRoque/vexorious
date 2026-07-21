@@ -67,6 +67,37 @@
             transform: scale(1.08) translateY(-4px);
         }
 
+        .hero-logo:active {
+            transform: scale(0.95);
+        }
+
+        /* Lightning Strike Glow Effect on Click */
+        .hero-logo.lightning-active {
+            filter: drop-shadow(0 0 35px #00ff66) drop-shadow(0 0 70px #ffffff) drop-shadow(0 0 110px #00ff66) !important;
+            transform: scale(1.22) translateY(-6px) !important;
+        }
+
+        .hero-banner.lightning-flash {
+            animation: heroLightningBg 0.4s ease-out;
+        }
+
+        @keyframes heroLightningBg {
+            0% { background-color: rgba(0, 255, 102, 0.3); }
+            20% { background-color: rgba(255, 255, 255, 0.4); }
+            40% { background-color: rgba(0, 255, 102, 0.2); }
+            60% { background-color: rgba(255, 255, 255, 0.25); }
+            100% { background-color: transparent; }
+        }
+
+        .lightning-canvas {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 3;
+        }
+
         @keyframes heroLogoFloat {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-8px); }
@@ -482,6 +513,7 @@
     <!-- 1. HERO SECTION WITH CENTERED LOGO & SPLIT LAYOUT -->
     <section class="hero-banner">
         <div class="hero-overlay"></div>
+        <canvas id="lightningCanvas" class="lightning-canvas"></canvas>
         <div class="hero-content-split">
             <!-- Left Side: Centered Logo, Title & Custom Badges -->
             <div class="hero-left">
@@ -860,6 +892,73 @@
                         console.warn(`Failed to fetch Bedrock skin for XUID ${xuid}:`, err);
                     });
             });
+
+            // Logo Click Lightning Strike & Intense Emerald Glow Effect
+            const heroLogo = document.querySelector('.hero-logo');
+            const heroBanner = document.querySelector('.hero-banner');
+            const canvas = document.getElementById('lightningCanvas');
+
+            if (heroLogo && heroBanner && canvas) {
+                heroLogo.addEventListener('click', () => {
+                    const ctx = canvas.getContext('2d');
+                    canvas.width = heroBanner.clientWidth;
+                    canvas.height = heroBanner.clientHeight;
+
+                    const logoRect = heroLogo.getBoundingClientRect();
+                    const bannerRect = heroBanner.getBoundingClientRect();
+                    const startX = (logoRect.left + logoRect.width / 2) - bannerRect.left;
+                    const startY = (logoRect.top + logoRect.height / 2) - bannerRect.top;
+
+                    // Trigger CSS Glow and Flash
+                    heroLogo.classList.add('lightning-active');
+                    heroBanner.classList.add('lightning-flash');
+
+                    // Draw jagged lightning strikes emanating from logo
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                    function drawBolt(x1, y1, x2, y2, color, width) {
+                        ctx.beginPath();
+                        ctx.moveTo(x1, y1);
+
+                        const steps = 14;
+                        for (let i = 0; i <= steps; i++) {
+                            const t = i / steps;
+                            const targetX = x1 + (x2 - x1) * t;
+                            const targetY = y1 + (y2 - y1) * t;
+                            const offset = (i === 0 || i === steps) ? 0 : (Math.random() - 0.5) * 50;
+                            
+                            ctx.lineTo(targetX + offset, targetY);
+                        }
+
+                        ctx.strokeStyle = color;
+                        ctx.lineWidth = width;
+                        ctx.shadowColor = '#00ff66';
+                        ctx.shadowBlur = 20;
+                        ctx.stroke();
+                    }
+
+                    // Multi-branch lightning strikes
+                    const strikePoints = [
+                        { x: startX - 300, y: canvas.height },
+                        { x: startX + 350, y: canvas.height },
+                        { x: startX - 400, y: startY + 120 },
+                        { x: startX + 450, y: startY + 120 },
+                        { x: canvas.width - 50, y: startY + 80 }
+                    ];
+
+                    strikePoints.forEach(pt => {
+                        drawBolt(startX, startY, pt.x, pt.y, '#ffffff', 4);
+                        drawBolt(startX, startY, pt.x, pt.y, '#00ff66', 2);
+                    });
+
+                    // Clear effects after flash sequence ends
+                    setTimeout(() => {
+                        heroLogo.classList.remove('lightning-active');
+                        heroBanner.classList.remove('lightning-flash');
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    }, 450);
+                });
+            }
         });
     </script>
 @endsection
