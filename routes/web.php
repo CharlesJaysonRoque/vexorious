@@ -30,3 +30,7 @@ Route::get('/world-map', function () {
     return view('map');
 })->name('map');
 
+Route::get('/ping', function () {
+    return response('pong', 200);
+})->name('ping');
+
