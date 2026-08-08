@@ -17,14 +17,10 @@ services:
       - key: DB_CONNECTION
         value: sqlite
       - key: DB_DATABASE
-        value: /var/www/html/storage/database/database.sqlite
+        value: /var/www/html/database/database.sqlite
       - key: LOG_CHANNEL
         value: stderr
       - key: SESSION_DRIVER
         value: cookie
       - key: CACHE_STORE
         value: array
-    disk:
-      name: vexorious-data
-      mountPath: /var/www/html/storage/database
-      sizeGB: 1
