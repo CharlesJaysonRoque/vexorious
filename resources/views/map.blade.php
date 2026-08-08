@@ -1,5 +1,8 @@
 @extends('welcome')
 
+@section('title', 'Interactive World Map | Vexorious SMP')
+@section('meta_description', 'View the interactive world map, land claims, spawn district, and player shop locations on Vexorious SMP.')
+
 @section('content')
     <style>
         .map-wrapper {

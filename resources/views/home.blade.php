@@ -1,5 +1,8 @@
 @extends('welcome')
 
+@section('title', 'Vexorious SMP | Bedrock Survival Server')
+@section('meta_description', 'Welcome to Vexorious SMP! Join our Minecraft Bedrock survival server featuring land protection, player shops, active community, and custom builds.')
+
 @section('content')
     <style>
 

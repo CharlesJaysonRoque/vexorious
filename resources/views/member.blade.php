@@ -1,5 +1,8 @@
 @extends('welcome')
 
+@section('title', 'Community Members & Staff | Vexorious SMP')
+@section('meta_description', 'Meet the staff team, builders, and active community members of Vexorious Minecraft Bedrock SMP.')
+
 @php
     $members = [
         [

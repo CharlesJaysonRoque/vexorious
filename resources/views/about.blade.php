@@ -1,5 +1,8 @@
 @extends('welcome')
 
+@section('title', 'About Us | Vexorious SMP')
+@section('meta_description', 'Learn about Vexorious SMP history, community values, features, and server specifications.')
+
 @section('content')
     <style>
         .about-wrapper {

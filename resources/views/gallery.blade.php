@@ -1,5 +1,8 @@
 @extends('welcome')
 
+@section('title', 'Build Gallery | Vexorious SMP')
+@section('meta_description', 'Explore community builds, player bases, mega projects, and event highlights on Vexorious SMP.')
+
 @section('content')
     <style>
         .gallery-wrapper {

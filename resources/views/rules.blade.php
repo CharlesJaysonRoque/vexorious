@@ -1,5 +1,8 @@
 @extends('welcome')
 
+@section('title', 'Server Rules & Code of Conduct | Vexorious SMP')
+@section('meta_description', 'Read the official server rules and guidelines for playing on Vexorious Minecraft Bedrock SMP.')
+
 @section('content')
     <style>
         .rules-wrapper {

@@ -3,8 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vexorious | Bedrock Survival Server</title>
-    <meta name="description" content="Vexorious is a Minecraft Bedrock SMP survival server community featuring land claims, commercial district player shops, and cross-platform play.">
+    <title>@yield('title', 'Vexorious | Bedrock Survival Server')</title>
+    <meta name="description" content="@yield('meta_description', 'Vexorious is a Minecraft Bedrock SMP survival server community featuring land claims, commercial district player shops, and cross-platform play.')">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="icon" href="{{ asset('images/logo/logo-transparent.png') }}" type="image/png">
+
+    <!-- OpenGraph Social Tags -->
+    <meta property="og:title" content="@yield('title', 'Vexorious | Bedrock Survival Server')">
+    <meta property="og:description" content="@yield('meta_description', 'Join Vexorious Minecraft Bedrock SMP survival server community.')">
+    <meta property="og:image" content="{{ asset('images/logo/logo-transparent.png') }}">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', 'Vexorious SMP')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Join Vexorious Minecraft Bedrock SMP survival server community.')">
+    <meta name="twitter:image" content="{{ asset('images/logo/logo-transparent.png') }}">
 
     <style>
         @font-face {
@@ -35,6 +51,9 @@
             padding: 0;
             margin: 0;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Custom Scrollbar for Minecraft Theme */
@@ -57,6 +76,7 @@
             padding: 60px 20px;
             max-width: 1000px;
             margin: 0 auto;
+            flex: 1;
         }
 
         h1 {
@@ -84,8 +104,6 @@
             padding-bottom: 20px;
         }
 
-
-
         @media (max-width: 600px) {
             .ImageHighlight {
                 height: 300px;
@@ -107,7 +125,11 @@
 
 @include('navbar')
 
-@yield('content')
+<div style="flex: 1;">
+    @yield('content')
+</div>
+
+@include('footer')
 
 </body>
 </html>
