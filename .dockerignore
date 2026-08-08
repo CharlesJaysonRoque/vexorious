@@ -13,6 +13,3 @@ storage/framework/views/*
 database/*.sqlite
 README.md
 phpunit.xml
-vite.config.js
-package-lock.json
-composer.lock

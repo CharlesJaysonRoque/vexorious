@@ -2,7 +2,7 @@
 FROM node:20-alpine AS frontend
 WORKDIR /app
 COPY package*.json vite.config.js ./
-RUN npm ci
+RUN npm install
 COPY resources ./resources
 COPY public ./public
 RUN npm run build
@@ -15,7 +15,6 @@ RUN apk add --no-cache \
     nginx \
     supervisor \
     curl \
-    dos2unix \
     libpng-dev \
     libjpeg-turbo-dev \
     freetype-dev \
@@ -49,7 +48,7 @@ RUN mkdir -p database storage/database storage/framework/{sessions,views,cache} 
 # Copy Nginx and Entrypoint configs
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN dos2unix /usr/local/bin/entrypoint.sh && chmod +x /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 8080
 
