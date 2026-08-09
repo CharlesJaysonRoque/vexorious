@@ -11,7 +11,7 @@ services:
       - key: APP_DEBUG
         value: "false"
       - key: APP_KEY
-        generateValue: true
+        value: base64:0WxaPIbT+cyd++qH0RudvGcC4LNRP2OuVreerPnIByk=
       - key: APP_URL
         value: https://vexorious-web.onrender.com
       - key: DB_CONNECTION

@@ -23,6 +23,11 @@ mkdir -p /var/www/html/storage/framework/sessions \
 chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 chmod -R 777 /var/www/html/storage /var/www/html/bootstrap/cache
 
+# Generate key if empty
+if [ -z "$APP_KEY" ]; then
+    php artisan key:generate --force
+fi
+
 # Run Laravel optimizations
 php artisan migrate --force || true
 php artisan config:cache
