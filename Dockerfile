@@ -7,14 +7,15 @@ COPY resources ./resources
 COPY public ./public
 RUN npm run build
 
-# Stage 2: PHP Application & Nginx
-FROM php:8.3-fpm-alpine
+# Stage 2: PHP Application & Nginx (PHP 8.4 for Laravel 13 compatibility)
+FROM php:8.4-fpm-alpine
 
 # Install system dependencies & PHP extensions
 RUN apk add --no-cache \
     nginx \
     supervisor \
     curl \
+    dos2unix \
     libpng-dev \
     libjpeg-turbo-dev \
     freetype-dev \
@@ -37,7 +38,7 @@ COPY . .
 COPY --from=frontend /app/public/build ./public/build
 
 # Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader --no-interaction
+RUN composer install --no-dev --optimize-autoloader --no-interaction --ignore-platform-req=php+
 
 # Create database and storage directories with proper permissions
 RUN mkdir -p database storage/database storage/framework/{sessions,views,cache} storage/logs \
@@ -48,7 +49,7 @@ RUN mkdir -p database storage/database storage/framework/{sessions,views,cache} 
 # Copy Nginx and Entrypoint configs
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/entrypoint.sh /usr/local/bin/entrypoint.sh
-RUN chmod +x /usr/local/bin/entrypoint.sh
+RUN dos2unix /usr/local/bin/entrypoint.sh && chmod +x /usr/local/bin/entrypoint.sh
 
 EXPOSE 8080
 
